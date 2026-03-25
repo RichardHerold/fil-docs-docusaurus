@@ -74,7 +74,7 @@ const config = {
             position: "left",
           },
           {
-            href: "https://console.fil.one",
+            href: "https://app.fil.one",
             label: "Dashboard",
             position: "right",
           },

@@ -8,7 +8,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "quickstart/index",
-        "quickstart/console",
+        "quickstart/app",
         "quickstart/cli",
         "quickstart/sdk",
       ],
@@ -43,11 +43,11 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Console",
+      label: "App",
       items: [
-        "console/overview",
-        "console/managing-buckets",
-        "console/uploading-files",
+        "app/overview",
+        "app/managing-buckets",
+        "app/uploading-files",
       ],
     },
     {
