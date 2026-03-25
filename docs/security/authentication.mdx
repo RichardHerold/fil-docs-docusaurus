@@ -1,13 +1,13 @@
 ---
 title: Authentication
-description: How to authenticate with the Fil Hyperspace API using API keys and SigV4.
+description: How to authenticate with the Fil One API using API keys and SigV4.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-All API requests to Fil Hyperspace must be authenticated using AWS Signature Version 4 (SigV4). This is the same authentication method used by AWS S3, so any S3-compatible SDK or tool handles it automatically.
+All API requests to Fil One must be authenticated using AWS Signature Version 4 (SigV4). This is the same authentication method used by AWS S3, so any S3-compatible SDK or tool handles it automatically.
 
 ## API keys
 
@@ -58,17 +58,17 @@ Then pass `--endpoint-url https://s3.fil.one` on every command, or set it as a p
 
 ```ini
 # ~/.aws/config
-[profile filhyperspace]
+[profile filone]
 endpoint_url = https://s3.fil.one
 region = us-east-1
 
 # ~/.aws/credentials
-[filhyperspace]
+[filone]
 aws_access_key_id = YOUR_ACCESS_KEY
 aws_secret_access_key = YOUR_SECRET_KEY
 ```
 
-Then use `--profile filhyperspace` on your commands.
+Then use `--profile filone` on your commands.
 
 ### Python (boto3)
 

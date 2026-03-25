@@ -3,7 +3,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Fil Hyperspace",
+  title: "Fil One",
   tagline: "S3-compatible object storage with built-in compliance and immutability.",
   favicon: "img/favicon.svg",
   url: "https://fil.one",
@@ -46,9 +46,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "Fil Hyperspace",
+        title: "Fil One",
         logo: {
-          alt: "Fil Hyperspace",
+          alt: "Fil One",
           src: "img/logo.svg",
         },
         items: [

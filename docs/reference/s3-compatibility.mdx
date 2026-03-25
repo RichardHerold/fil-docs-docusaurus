@@ -3,7 +3,7 @@ title: S3 Compatibility
 description: Supported S3 operations, authentication, and endpoint configuration.
 ---
 
-Fil Hyperspace provides an S3-compatible API. If your application works with AWS S3, it works with Fil Hyperspace — point your SDK or CLI at our endpoint and authenticate with your API keys.
+Fil One provides an S3-compatible API. If your application works with AWS S3, it works with Fil One — point your SDK or CLI at our endpoint and authenticate with your API keys.
 
 ## Endpoint
 
@@ -17,7 +17,7 @@ All requests use HTTPS. HTTP connections are rejected.
 
 ## Authentication
 
-Fil Hyperspace supports **AWS Signature Version 4 (SigV4)** authentication. Any S3 client or SDK that supports SigV4 will work without modification.
+Fil One supports **AWS Signature Version 4 (SigV4)** authentication. Any S3 client or SDK that supports SigV4 will work without modification.
 
 | Parameter | Value |
 |-----------|-------|
@@ -93,7 +93,7 @@ The following operations are planned for future releases:
 
 ## Error responses
 
-Fil Hyperspace returns standard S3 error XML for all error conditions. If you're handling S3 errors in your application today, no changes are needed.
+Fil One returns standard S3 error XML for all error conditions. If you're handling S3 errors in your application today, no changes are needed.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -109,9 +109,9 @@ See the [Error Reference](/reference/errors) for a full list of error codes.
 
 ## Differences from AWS S3
 
-Fil Hyperspace is S3-compatible, not an S3 clone. A few behaviors differ:
+Fil One is S3-compatible, not an S3 clone. A few behaviors differ:
 
-| Behavior | AWS S3 | Fil Hyperspace |
+| Behavior | AWS S3 | Fil One |
 |----------|--------|----------------|
 | Bucket deletion | Requires bucket to be empty first. | Cascade-deletes all objects (with confirmation). Blocked if any object has active Compliance retention. |
 | Object Lock enablement | Can be enabled at bucket creation. | Same — can only be enabled at bucket creation. |
