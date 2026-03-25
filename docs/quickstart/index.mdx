@@ -21,7 +21,7 @@ From the dashboard, click **Create Bucket**. Give it a name (lowercase, no space
 
 | Setting | Default | Notes |
 |---------|---------|-------|
-| Region | `us-east-1` | <!-- PLACEHOLDER: Update with supported regions --> |
+| Region | `eu-west-1` | |
 | Object Lock | Disabled | Enable at creation if you need WORM compliance. Cannot be enabled later. |
 | Versioning | Disabled | Automatically enabled if Object Lock is on. |
 
@@ -57,7 +57,7 @@ Choose your preferred method:
     ```bash
     aws configure set aws_access_key_id YOUR_ACCESS_KEY
     aws configure set aws_secret_access_key YOUR_SECRET_KEY
-    aws configure set default.region us-east-1
+    aws configure set default.region eu-west-1
     ```
 
     Upload a file:
@@ -102,7 +102,7 @@ Choose your preferred method:
 
     const client = new S3Client({
       endpoint: "https://s3.fil.one",
-      region: "us-east-1",
+      region: "eu-west-1",
       credentials: {
         accessKeyId: "YOUR_ACCESS_KEY",
         secretAccessKey: "YOUR_SECRET_KEY",
