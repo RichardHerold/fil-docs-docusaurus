@@ -7,7 +7,7 @@ const config = {
   tagline: "S3-compatible object storage with built-in compliance and immutability.",
   favicon: "img/favicon.svg",
   url: "https://fil.one",
-  baseUrl: "/docs/",
+  baseUrl: "/",
   organizationName: "filecoin-one",
   projectName: "docs",
 
