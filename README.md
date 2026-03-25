@@ -1,4 +1,4 @@
-# Fil Hyperspace Docs
+# Fil One Docs
 
 User-facing documentation for [fil.one/docs](https://fil.one/docs). Built with [Docusaurus](https://docusaurus.io/) and deployed to [Vercel](https://vercel.com/).
 
