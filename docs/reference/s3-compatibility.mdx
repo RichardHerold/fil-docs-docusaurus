@@ -37,7 +37,7 @@ Fil One supports **AWS Signature Version 4 (SigV4)** authentication. Any S3 clie
 | `DeleteBucket` | ✅ Supported | Cascade-deletes all objects in the bucket. |
 | `ListBuckets` | ✅ Supported | |
 | `HeadBucket` | ✅ Supported | |
-| `PutBucketVersioning` | ✅ Supported | Automatically enabled when Object Lock is on. |
+| `PutBucketVersioning` | ✅ Supported | Always enabled. Cannot be suspended. |
 | `GetBucketVersioning` | ✅ Supported | |
 
 ### Object operations
@@ -114,7 +114,7 @@ Fil One is S3-compatible, not an S3 clone. A few behaviors differ:
 | Behavior | AWS S3 | Fil One |
 |----------|--------|----------------|
 | Bucket deletion | Requires bucket to be empty first. | Cascade-deletes all objects (with confirmation). Blocked if any object has active Compliance retention. |
-| Object Lock enablement | Can be enabled at bucket creation. | Same — can only be enabled at bucket creation. |
+| Object Lock enablement | Can be enabled at bucket creation. | Always enabled on every bucket. |
 | IAM policies | Full IAM support. | Single-user accounts in the current release. IAM planned for a future release. |
 | Storage classes | Multiple (Standard, IA, Glacier, etc.) | Single storage class. |
 | Regions | 30+ regions globally. | `eu-west-1` (additional regions planned). |

@@ -19,15 +19,11 @@ This guide walks you through creating an account, setting up credentials, and up
 
 From the dashboard, click **Create Bucket**. Give it a name (lowercase, no spaces — same rules as S3) and choose your settings:
 
-| Setting | Default | Notes |
-|---------|---------|-------|
+| Setting | Value | Notes |
+|---------|-------|-------|
 | Region | `eu-west-1` | |
-| Object Lock | Disabled | Enable at creation if you need WORM compliance. Cannot be enabled later. |
-| Versioning | Disabled | Automatically enabled if Object Lock is on. |
-
-:::warning
-Object Lock can only be enabled when you create a bucket. It cannot be added to an existing bucket, and it cannot be turned off once enabled.
-:::
+| Object Lock | Always on | Every bucket has WORM compliance built in. |
+| Versioning | Always on | Required by Object Lock. |
 
 ## 3. Generate an API key
 
@@ -48,7 +44,8 @@ Choose your preferred method:
   <TabItem value="app-ui" label="App">
     1. Open your bucket from the dashboard.
     2. Click **Upload** and select a file.
-    3. Done — your object appears in the file list immediately.
+    3. Your object appears in the file list immediately.
+    4. To download, click the file name and then click **Download**.
   </TabItem>
 
   <TabItem value="aws-cli" label="AWS CLI">
@@ -128,7 +125,7 @@ Choose your preferred method:
 ## What's next
 
 <div class="card-grid">
-  <a href="/storage/object-lock"><strong>Object Lock</strong><span>Protect data with immutable retention policies.</span></a>
+  <a href="/storage/object-lock"><strong>Object Lock</strong><span>Configure retention policies — enabled on every bucket by default.</span></a>
   <a href="/reference/s3-compatibility"><strong>S3 Compatibility</strong><span>Full list of supported operations and headers.</span></a>
   <a href="/sdk/overview"><strong>SDK Examples</strong><span>Detailed examples for Python, JavaScript, Go, and CLI.</span></a>
   <a href="/billing/trial"><strong>Billing & Trial</strong><span>What's included in your trial and how to upgrade.</span></a>

@@ -50,8 +50,8 @@ Fil One returns standard S3 error responses in XML format. If your application a
 | Delete locked object | `AccessDenied` | 403 | Object has active Compliance retention. Error message includes the expiry date. |
 | Shorten retention | `AccessDenied` | 403 | Compliance mode retention cannot be shortened. You can only extend it. |
 | Delete bucket with locked objects | `BucketNotEmpty` | 409 | Bucket contains objects with active retention. Error includes count and earliest expiry. |
-| Disable Object Lock | `InvalidBucketState` | 409 | Object Lock cannot be disabled once enabled. |
-| Suspend versioning on locked bucket | `InvalidBucketState` | 409 | Versioning cannot be suspended on an Object Lock-enabled bucket. |
+| Disable Object Lock | `InvalidBucketState` | 409 | Object Lock is always enabled and cannot be disabled. |
+| Suspend versioning | `InvalidBucketState` | 409 | Versioning is always enabled and cannot be suspended. |
 
 ## Troubleshooting
 
