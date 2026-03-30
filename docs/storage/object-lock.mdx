@@ -17,52 +17,15 @@ Object Lock on Fil One follows S3 Object Lock semantics. If you have used Object
 
 **Compliance mode** -- The strictest protection. No user, including the account owner, can shorten the retention period or delete a locked object before it expires. This mode satisfies regulatory requirements for immutable storage (SEC 17a-4, FINRA, HIPAA, GDPR).
 
-**Versioning** -- Object Lock requires versioning to be enabled on the bucket. Each version of an object can have its own retention settings.
+**Versioning** -- Object Lock requires versioning, so versioning is always enabled on every bucket. Each version of an object can have its own retention settings.
 
 :::note
 Governance mode and Legal Hold are planned for a future release. The current release supports Compliance mode only.
 :::
 
-## Enabling Object Lock
+## Object Lock is always on
 
-Object Lock must be enabled **at bucket creation time**. It cannot be added to an existing bucket, and it cannot be turned off once enabled.
-
-:::warning
-This is a permanent, irreversible setting. Versioning also cannot be suspended on a bucket with Object Lock enabled.
-:::
-
-<Tabs>
-  <TabItem value="app" label="App">
-    When creating a new bucket, toggle **Enable Object Lock** to on. You will be prompted to set a default retention period (optional).
-  </TabItem>
-
-  <TabItem value="aws-cli" label="AWS CLI">
-    ```bash
-    aws s3api create-bucket \
-      --bucket my-compliance-bucket \
-      --object-lock-enabled-for-object-lock \
-      --endpoint-url https://s3.fil.one
-    ```
-  </TabItem>
-
-  <TabItem value="python-boto3" label="Python (boto3)">
-    ```python
-    import boto3
-
-    s3 = boto3.client(
-        "s3",
-        endpoint_url="https://s3.fil.one",
-        aws_access_key_id="YOUR_ACCESS_KEY",
-        aws_secret_access_key="YOUR_SECRET_KEY",
-    )
-
-    s3.create_bucket(
-        Bucket="my-compliance-bucket",
-        ObjectLockEnabledForObjectLock=True,
-    )
-    ```
-  </TabItem>
-</Tabs>
+Every bucket on Fil One has Object Lock enabled automatically. There is no way to disable it. This means every bucket supports WORM retention out of the box — you just need to configure a retention policy to start protecting objects.
 
 ## Setting a default retention policy
 
@@ -70,7 +33,7 @@ You can set a default retention period on the bucket. Any object uploaded to the
 
 <Tabs>
   <TabItem value="app" label="App">
-    Open your Object Lock-enabled bucket, go to **Settings > Object Lock**, and configure the default retention mode and duration.
+    Open your bucket, go to **Settings > Object Lock**, and configure the default retention mode and duration.
   </TabItem>
 
   <TabItem value="aws-cli" label="AWS CLI">

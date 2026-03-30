@@ -8,7 +8,6 @@ const sidebars = {
       collapsed: false,
       items: [
         "quickstart/index",
-        "quickstart/app",
         "quickstart/cli",
         "quickstart/sdk",
       ],

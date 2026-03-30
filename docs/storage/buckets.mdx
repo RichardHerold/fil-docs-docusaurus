@@ -26,8 +26,9 @@ These are the same naming rules as AWS S3.
     1. From the dashboard, click **Create Bucket**.
     2. Enter a bucket name.
     3. Choose your region.
-    4. Optionally enable **Object Lock** (this cannot be changed later).
-    5. Click **Create**.
+    4. Click **Create**.
+
+    Every bucket is created with Object Lock and versioning enabled automatically.
   </TabItem>
 
   <TabItem value="aws-cli" label="AWS CLI">
@@ -37,26 +38,15 @@ These are the same naming rules as AWS S3.
       --endpoint-url https://s3.fil.one
     ```
 
-    To create a bucket with Object Lock enabled:
-
-    ```bash
-    aws s3api create-bucket \
-      --bucket my-compliance-bucket \
-      --object-lock-enabled-for-object-lock \
-      --endpoint-url https://s3.fil.one
-    ```
+    Object Lock and versioning are enabled automatically on every bucket.
   </TabItem>
 
   <TabItem value="python-boto3" label="Python (boto3)">
     ```python
     s3.create_bucket(Bucket="my-bucket")
-
-    # With Object Lock
-    s3.create_bucket(
-        Bucket="my-compliance-bucket",
-        ObjectLockEnabledForObjectLock=True,
-    )
     ```
+
+    Object Lock and versioning are enabled automatically on every bucket.
   </TabItem>
 </Tabs>
 
